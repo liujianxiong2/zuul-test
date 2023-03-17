@@ -1,0 +1,16 @@
+server:
+  port: 9980  #端口号
+spring:
+  application:
+    name: demo-client
+eureka:
+  client:
+    register-with-eureka: true  #是否注册(eureka本身就是注册中心所以自己就不注册了)
+    fetch-registry: true   #是否获取注册信息
+    service-url:
+      defaultZone: http://10.0.221.127:1100/eureka/,http://10.0.221.111:1100/eureka/
+  instance:
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: false #（默认true；此处设为false，关闭自我保护机制，主动剔除故障的节点）
+    eviction-interval-timer-in-ms: 5000
